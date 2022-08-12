@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kotaro's blog</title>
+    <title>Django girls blog</title>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7V9PJRC32G"></script>
     <script>
@@ -14,7 +14,21 @@
     </script>
 </head>
 <body>
-    <p>Hi there!</p>
-    <p>It works!</p>
+    <div>
+        <h1><a href="/">Django Girls Blog</a></h1>
+    </div>
+
+    <div>
+        {{ posts }}
+    </div>
+
+    {% for post in posts %}
+        <div>
+            <p>pulished: {{ post.published_date }}</p>
+            <h2><a href=""></a> {{ post.title }}</h2>
+            <p>{{ post.text | linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+
 </body>
 </html>
